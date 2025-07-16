@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function Typed({type, backspace, delay, duration, cursor}: 
-{type: string | [string], backspace: number | [number], delay?: number, duration?: number, cursor?: string}) {
+{type: string | [string], backspace?: number | [number], delay?: number, duration?: number, cursor?: string}) {
     const typeProp = typeof(type) === 'string' ? [type] : type 
     const backspaceProp = typeof(backspace) === 'number' ? [backspace] : backspace
     const durationProp = duration ? duration : 100
@@ -21,7 +21,7 @@ export default function Typed({type, backspace, delay, duration, cursor}:
                     setResult(newResult)
                     setLine(true)
                 } else if (result[num] === typeProp[num]) {
-                    if (backspaceProp.includes(num)) {
+                    if (backspaceProp?.includes(num)) {
                         clearInterval(typing)
                         const backspacing = setTimeout(() => {
                             setBack(true)
