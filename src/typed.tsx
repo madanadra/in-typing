@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function Typed({type, backspace, delay, duration, cursor}: 
-{type: string | [string], backspace?: number | [number], delay?: number, duration?: number, cursor?: string}) {
+{type: string | [string, ...string[]], backspace?: number | [number, ...number[]], delay?: number, duration?: number, cursor?: string}) {
     const typeProp = typeof(type) === 'string' ? [type] : type 
     const backspaceProp = typeof(backspace) === 'number' ? [backspace] : backspace
     const durationProp = duration ? duration : 100
