@@ -60,5 +60,5 @@ export default function Typed({type, backspace, delay, duration, cursor}:
         return () => {}
     }, [line])
 
-    return (<h1 style={{borderRight: `${line && cursor ? `1px solid ${cursor}` : 'none'}`}}>{result}</h1>)
+    return (<h1 style={line && cursor ? {borderRight: `1px solid ${cursor}`, marginRight: '-1px'} : {}}>{result}</h1>)
 }
