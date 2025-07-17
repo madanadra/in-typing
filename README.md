@@ -18,8 +18,8 @@ This is simple typing animation library for React. Only 1 tag component ``` <Typ
 
 | Property | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `type` | `string \| [string]` | String to animate (e.g., `'I want an apple'`). For backspace animation, use array (e.g., `['I want an ', 'apple', 'banana', 'avocado']`). |
-| `backspace` | `number \| [number] \| undefined` | Pointing index of the **type** property array (e.g., `1`). For more than one backspace animation, use array (e.g., `[1, 2]`), execute from the smallest index. |
+| `type` | `string \| [string, ...string[]]` | String to animate (e.g., `'I want an apple'`). For backspace animation, use array (e.g., `['I want an ', 'apple', 'banana', 'avocado']`). |
+| `backspace` | `number \| [number, ...number[]] \| undefined` | Pointing index of the **type** property array (e.g., `1`). For more than one backspace animation, use array (e.g., `[1, 2]`), execute from the smallest index. |
 | `duration` | `number \| undefined` | Duration of typing animation per character in milliseconds (e.g., `1000`). Default 100. |
 | `delay` | `number \| undefined` | Delay of backspace animation in milliseconds (e.g., `1000`). Default is the same as **duration** value. |
 | `cursor` | `string \| undefined` | Color of the text cursor animation, accept all valid color values in CSS (e.g., `'red'`). If undefined, text cursor doesn't appear. |
